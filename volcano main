@@ -1,0 +1,24 @@
+public class Main {
+
+	public static void main(String[] args) {
+		Volcano volcano = new Volcano("Dan", 10);
+
+        volcano.add(1200);
+        volcano.add(1500);
+        volcano.add(1300);
+        volcano.add(1700);
+        volcano.add(1100);
+        volcano.add(1400);
+        volcano.add(1600);
+        volcano.add(1600);
+        volcano.add(1600);
+        volcano.add(1600);
+        volcano.add(1600);
+        volcano.add(1600);
+        
+        volcano.print();
+
+
+	}
+
+}
