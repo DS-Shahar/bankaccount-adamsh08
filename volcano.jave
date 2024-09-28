@@ -1,0 +1,108 @@
+public class Volcano {
+	 private String name;
+	 private int[] degrees;
+	 private int count; 
+	 public Volcano(String name, int size)
+	 {
+		  this.name = name;
+		  this.degrees = new int[size];
+		  this.count = 0; 
+	 }
+	 public Volcano(Volcano v)
+	 {
+		  this.name = v.name;
+		  this.degrees=new int[v.degrees.length];
+		  for (int i=0; i<v.count;i++) 
+		  {
+			  degrees[i] = v.degrees[i];
+		  }
+		  this.count = v.count; 
+	 }
+	 
+	 public int getCount()
+	 {
+		 return count;
+	 }
+	 
+	 public String getName()
+	 {
+		 return name;
+	 }
+	 
+	 public int[] getDegrees()
+	 {
+		 return degrees;
+	 }
+	 public boolean add(int d)
+	 {
+		 if(this.count < this.degrees.length)
+		 {
+			 this.degrees[count]+=d;
+			 this.count++;
+			 return true;
+		 }
+		 else
+		 {
+			 return false; 
+		 }
+	 }
+	 public void delete(int index)
+	 {
+		 for (int i=index;i<count;i++) 
+		 {
+			 degrees[i] = degrees[i+1];
+		 }
+		 degrees[count] = 0;
+		 count--;
+	 }
+	 public void deleteall(){
+		 for (int i=0;i<degrees.length;i++) 
+		 {
+				 degrees[i]=0;
+		 }
+		 count=0;
+	 }
+	 public void fix(int index, int result)
+	 {
+		 this.degrees[index] = result; 
+	 }
+	 public double average()
+	 {
+		 double avg = 0;
+		 double sum = 0;
+		 for(int i=0;i<this.count;i++)
+		 {
+			 sum+=this.degrees[i];
+		 }
+		 avg = sum/this.count;
+		 return avg;
+	 }
+	 public int maxUnder(int x)
+	 {
+		 int index = 0;
+		 int max = 0;
+		 for(int i=0;i<this.count;i++)
+		 {
+			 if(this.degrees[i] < x && this.degrees[i] > max)
+			 {
+				 max = degrees[i];
+				 index = i;
+			 }
+		 }
+		 return index;
+	 }
+	 public void print()
+	 {
+		 for(int i=0;i<this.count;i++)
+		 {
+			 System.out.println(i+1+") "+this.degrees[i]);
+		 }
+	 }
+	 public String toString()
+	 {
+		 String x = "There were "+this.count+" checks out of "+this.degrees.length;
+		 return x;
+	 }
+	 
+	 
+}
