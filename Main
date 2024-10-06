@@ -1,0 +1,15 @@
+public class Main {
+	public static void main(String[] args) {
+		Athlete a1= new Athlete ()
+	}
+	public static int aboveGrade(double score,Athlete[] athletes) {
+		int count=0;
+		for (int i=0; i<athletes.length;i++){
+			if (athletes[i].average()>score)
+			count++;
+		}
+		return count;
+		
+	}
+
+}
